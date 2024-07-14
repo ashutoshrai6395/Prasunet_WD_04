@@ -1,0 +1,251 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Navbar styles */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(30, 24, 24, 0.9);
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, padding 0.3s;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #f9f9f9;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s, font-size 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff6347;
+    font-size: 20px;
+}
+
+/* Section styles */
+section {
+    padding: 100px 20px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#home {
+    background-image: url('Home.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#about {
+    background-image: url('About.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#skills {
+    background-image: url('skillss.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#projects {
+    background-image: url('projects.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#contact {
+    background-image: url('contact us.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+.content {
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #555;
+}
+
+img.profile-pic {
+    max-width: 150px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+img.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Skills and Projects styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #555;
+    transition: color 0.3s;
+}
+
+ul li:hover {
+    color: #ff6347;
+}
+
+ul li::before {
+    content: "•";
+    color: #ff6347;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.project {
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.project p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Contact form styles */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    border-color: #ff6347;
+}
+
+#contact-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#contact-form button:hover {
+    background-color: #e55347;
+    transform: scale(1.05);
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
